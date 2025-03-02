@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
-    <div className="min-h-screen sm:px-2 bg-gradient-to-r from-blue-400 to-purple-900 flex flex-col items-center justify-center text-white">
-     
+    <div className="min-h-screen sm:px-2 bg-gradient-to-r from-blue-400 to-purple-900 py-2 flex flex-col items-center justify-between text-white">
+     <div></div>
       <main className="flex flex-col items-center text-center">
         <motion.h1 
           className="md:text-5xl text-2xl font-bold mb-4"
