@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import Subject from '../component/Subject'
 import { IoIosArrowDropleft } from 'react-icons/io'
 import { appContext } from '../service/Context'
+import { div } from 'framer-motion/client'
 
 function Home() {
 
@@ -22,16 +23,24 @@ function Home() {
                <input type="text" onChange={filter} className='bg-purple-700 mt-2 outline-0 w-full md:px-3 md:py-2 px-4 text-white py-1 placeholder:text-white placeholder:text-center rounded-full placeholder:text-sm' placeholder='Browse Other Course' />
                </div>
             </div>
-            <h1 className='text-2xl md:text-4xl text-white font-bold my-3 md:my-8 px-2'>
-                Spoken English Started
+            <h1 className='text-2xl md:text-4xl italic text-pink-200 text-center font-bold my-3 md:my-8 px-2'>
+                Online Classes Started
             </h1>
             {/* subject list */}
             <div>
               {
+                searchFilter.length>0?
                 searchFilter.map((item,index)=>(
 
                   <Subject item={item} key={index} />
                 ))
+                :
+                <div className="flex mt-24 justify-center items-center ">
+                <p className="text-xl md:text-5xl bg-gradient-to-r from-yellow-200 to-green-600 bg-clip-text text-transparent italic font-bold text-center">
+                  Oops... we cannot find it... <span className='text-red-600'>!</span>
+                </p>
+              </div>
+              
               }
              
             </div>

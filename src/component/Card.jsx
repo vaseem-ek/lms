@@ -1,14 +1,22 @@
 import React from 'react';
-import { IoIosArrowForward } from 'react-icons/io';
 import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 
 function Card({ item }) {
+    const navigate=useNavigate()
+    const handleClick=(id)=>{
+        navigate(`/view/${id}`)
+    }
+   
     return (
-        <div className="w-full  bg-white rounded-xl shadow-md overflow-hidden md:flex mb-4">
+        <div  className="w-full  bg-white rounded-xl shadow-md overflow-hidden md:flex mb-4">
             <div className="w-full md:w-1/2 relative aspect-video">
                 <ReactPlayer
                     url={item.video_url}
-                    controls
+                    config={{
+                        youtube: {
+                          playerVars: { showinfo: 1 }
+                        }}}
                     width="100%"
                     height="100%"
                     className="rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
@@ -23,9 +31,8 @@ function Card({ item }) {
                         {item.description}
                     </p>
                 </div>
-                <div className="flex items-center justify-end">
-                    <IoIosArrowForward size={24} className="text-gray-500" />
-                </div>
+                
+            <button onClick={()=>handleClick(item.id)} className='px-3 hover:text-white hover:bg-black py-2 border font-bold rounded-full'>VIEW</button>
             </div>
         </div>
     );

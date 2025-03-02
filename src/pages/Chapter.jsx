@@ -37,7 +37,7 @@ const Chapter = () => {
     }
 
     return (
-        <div className="bg-gradient-to-r from-purple-500 to-blue-400 min-h-screen flex flex-col justify-center items-center text-white relative">
+        <div className="bg-gradient-to-r py-5 from-purple-500 to-blue-400 min-h-screen flex flex-col justify-center items-center text-white relative">
             <div className="w-full max-w-md">
                 <div className="relative flex flex-col items-center">
                     {specificChap.map((item, index) => (
@@ -46,7 +46,7 @@ const Chapter = () => {
                             className="relative flex flex-col items-center my-1"
                         >
                             <span>{item.title}</span>
-                            <Link to={`/video/${item.id}`}
+                            <Link to={`/module/${item.id}`}
                                 className={`w-12 h-12 flex justify-center items-center rounded-full border-2 ${
                                     item.title
                                         ? "bg-white text-purple-900"
@@ -67,9 +67,7 @@ const Chapter = () => {
                     ))}
                 </div>
             </div>
-            <button className="bg-white bg-gradient-to-b text-purple-900 px-6 py-2 mt-6 rounded-lg text-lg">
-                Continue
-            </button>
+            
         </div>
     );
 };

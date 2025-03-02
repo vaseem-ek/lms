@@ -5,6 +5,7 @@ import Landing from './pages/Landing'
 import Home from './pages/Home'
 import Chapter from './pages/Chapter'
 import Video from './pages/Video'
+import View from './pages/View'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,7 +16,8 @@ function App() {
       <Route path='/' element={<Landing/>} />
       <Route path='/home' element={<Home/>} />
       <Route path='/chapter/:id' element={<Chapter/>} />
-      <Route path='/video/:id' element={<Video/>} />
+      <Route path='/module/:id' element={<Video/>} />
+      <Route path='/view/:id' element={<View/>} />
     </Routes>
   </div>
   )
